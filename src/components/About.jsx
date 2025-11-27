@@ -16,23 +16,26 @@ export default function About() {
           <div className="space-y-6 order-2 md:order-1">
             <div className="space-y-5 text-foreground leading-relaxed text-lg">
               <p>
-                I don't just write code — I build{" "}
+                I don't just write code. I build{" "}
                 <span className="gradient-text font-semibold">
                   digital products
                 </span>{" "}
                 that move fast, scale cleanly, and feel amazing to use.
               </p>
               <p className="text-muted-foreground">
-                I'm a software engineer who helps startups turn ambitious ideas
-                into smooth, high-performance mobile and web apps. I think
-                beyond the UI — about architecture, usability, and the
-                experience that keeps users coming back.
+                I'm a Software Engineer and IT Support Specialist who turns
+                ambitious ideas into fast, reliable, high-performing mobile and
+                web applications. I don’t just design interfaces. I engineer the
+                architecture, usability, and user experience that keep people
+                engaged and coming back.
               </p>
               <p className="text-muted-foreground">
-                I thrive in fast-paced environments and ship confidently.
-                Whether it's building an MVP or fine-tuning a product for scale,
-                I bring intent, precision, and the kind of polish that makes
-                users feel the difference.
+                Backed by hands-on expertise in hardware/software
+                troubleshooting, installations, repairs, and maintenance, I
+                deliver with clarity and confidence in fast-paced environments.
+                Whether launching an MVP or scaling a product, I bring technical
+                depth, precision, and the level of polish that sets products
+                apart.
               </p>
             </div>
 

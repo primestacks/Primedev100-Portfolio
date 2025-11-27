@@ -2,10 +2,9 @@
 
 export default function Hero() {
   const socials = [
-    { icon: "GH", url: "#", label: "GitHub" },
-    { icon: "LI", url: "#", label: "LinkedIn" },
-    { icon: "TW", url: "#", label: "Twitter" },
-    { icon: "EM", url: "#", label: "Email" },
+    { icon: "GH", url: "https://github.com/primestacks", label: "GitHub" },
+    { icon: "LI", url: "www.linkedin.com/in/primestack", label: "LinkedIn" },
+    { icon: "TW", url: "https://x.com/primedev100", label: "Twitter" },
   ];
 
   return (
@@ -32,6 +31,7 @@ export default function Hero() {
             <a
               key={idx}
               href={social.url}
+              target="_blank"
               className="w-12 h-12 flex items-center justify-center rounded-xl gradient-border bg-card hover:gradient-bg hover:text-primary-foreground transition-all duration-300 group"
               aria-label={social.label}
             >
