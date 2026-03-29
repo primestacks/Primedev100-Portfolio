@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="geometric-dot"></div>
       </div>
 
-      <div className="flex gap-12 items-center justify-center relative z-10 w-full">
+      <div className="flex gap-4 sm:gap-8 lg:gap-12 items-center justify-center relative z-10 w-full">
         {/* Social sidebar - Desktop/Tablet only */}
         <div className="hidden lg:flex flex-col gap-5">
           {socials.map((social, idx) => (
@@ -52,7 +52,7 @@ export default function Hero() {
             <p className="font-bold -mb-3 relative">
               <span
                 style={{ letterSpacing: "7px" }}
-                className="gradient-text text-small lg:text-2xl ml-8  "
+                className="gradient-text text-xs sm:text-sm md:text-base lg:text-2xl ml-4 sm:ml-6 md:ml-8"
               >
                 IT SUPPORT SPECIALIST &
               </span>

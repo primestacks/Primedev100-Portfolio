@@ -14,10 +14,10 @@ export default function About() {
       <div className="relative z-10">
         <p className="section-header mb-12 text-center">#about me</p>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-stretch">
           {/* Text Content */}
           <div className="space-y-6 order-2 md:order-1 flex flex-col justify-center">
-            <div className="space-y-5 text-foreground leading-relaxed text-lg">
+            <div className="space-y-5 text-foreground leading-relaxed text-base sm:text-lg">
               <p>
                 I don't just write code. I build{" "}
                 <span className="gradient-text font-semibold">

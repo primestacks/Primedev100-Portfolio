@@ -1,10 +1,17 @@
 export default function Skills() {
-  const languages = ["TypeScript", "JavaScript", "Python", "SQL", "Go"]
+  const languages = ["TypeScript", "JavaScript", "Python", "SQL", "Go"];
 
   const technicalCategories = [
     {
       category: "Frameworks/Tools",
-      skills: ["React", "Next.js", "Node.js", "Express.js", "React Native", "GraphQL"],
+      skills: [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "React Native",
+        "GraphQL",
+      ],
     },
     {
       category: "Databases",
@@ -12,14 +19,24 @@ export default function Skills() {
     },
     {
       category: "DevOps & Cloud",
-      skills: ["AWS", "Docker", "CI/CD", "GitHub Actions", "Vercel", "Kubernetes"],
+      skills: [
+        "AWS",
+        "Docker",
+        "CI/CD",
+        "GitHub Actions",
+        "Vercel",
+        "Kubernetes",
+      ],
     },
-  ]
+  ];
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative">
+    <section
+      id="skills"
+      className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative"
+    >
       {/* Decorative dots */}
-      <div className="absolute left-10 bottom-32 flex gap-3">
+      <div className="absolute left-10 bottom-32 gap-3 sm:flex hidden">
         {[...Array(5)].map((_, i) => (
           <div key={i} className="geometric-dot"></div>
         ))}
@@ -50,7 +67,9 @@ export default function Skills() {
               key={idx}
               className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
             >
-              <h3 className="text-lg font-bold gradient-text mb-4">{cat.category}</h3>
+              <h3 className="text-lg font-bold gradient-text mb-4">
+                {cat.category}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill, i) => (
                   <span
@@ -66,5 +85,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
