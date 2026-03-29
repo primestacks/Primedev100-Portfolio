@@ -1,5 +1,11 @@
 "use client";
-
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaCopy,
+  FaPhone,
+} from "react-icons/fa";
 import { useState } from "react";
 
 export default function Contact() {
@@ -9,6 +15,7 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +30,16 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const copyToClipboard = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
+
   const contactInfo = [
     { label: "Email", value: "primedev100@gmail.com", icon: "✉️" },
     { label: "Phone", value: "+234 (0) 8067091463", icon: "📞" },
@@ -35,8 +52,8 @@ export default function Contact() {
       className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative overflow-hidden"
     >
       {/* Decorative gradient orbs */}
-      <div className="absolute left-0 bottom-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute right-0 top-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+      <div className="absolute left-0 bottom-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl hidden sm:block"></div>
+      <div className="absolute right-0 top-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl hidden md:block"></div>
 
       <div className="relative z-10">
         <p className="section-header mb-6 text-center">#contact</p>
@@ -62,9 +79,31 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-xl">
                   {info.icon}
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="text-sm text-muted-foreground">{info.label}</p>
-                  <p className="font-semibold text-foreground">{info.value}</p>
+                  <div className="flex items-center gap-2">
+                    <p className="font-semibold text-foreground">
+                      {info.value}
+                    </p>
+                    {info.label === "Email" && (
+                      <button
+                        onClick={() => copyToClipboard(info.value)}
+                        className="p-1 rounded-md hover:bg-muted transition-colors"
+                        title="Copy email"
+                      >
+                        <FaCopy className="w-4 h-4 text-muted-foreground hover:text-primary" />
+                      </button>
+                    )}
+                    {info.label === "Phone" && (
+                      <a
+                        href={`tel:${info.value.replace(/\s+/g, "")}`}
+                        className="p-1 rounded-md hover:bg-muted transition-colors"
+                        title="Call"
+                      >
+                        <FaPhone className="w-4 h-4 text-muted-foreground hover:text-primary" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -75,13 +114,31 @@ export default function Contact() {
                 Connect with me
               </p>
               <div className="flex gap-3">
-                {["GH", "LI", "TW", "DR"].map((social, idx) => (
+                {[
+                  {
+                    icon: FaGithub,
+                    url: "https://github.com/primestacks",
+                    label: "GitHub",
+                  },
+                  {
+                    icon: FaLinkedin,
+                    url: "https://linkedin.com/in/primestack",
+                    label: "LinkedIn",
+                  },
+                  {
+                    icon: FaTwitter,
+                    url: "https://x.com/primedev100",
+                    label: "Twitter",
+                  },
+                ].map((social, idx) => (
                   <a
                     key={idx}
-                    href="#"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-sm font-bold text-muted-foreground hover:gradient-bg hover:text-primary-foreground hover:border-transparent transition-all duration-300"
                   >
-                    {social}
+                    <social.icon className="w-5 h-5" />
                   </a>
                 ))}
               </div>
