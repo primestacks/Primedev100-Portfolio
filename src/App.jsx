@@ -7,12 +7,14 @@ import BentoGrid from "./components/BentoGrid"
 import About from "./components/About"
 import Experience from "./components/Experience"
 import Projects from "./components/Projects"
+import ProjectDetailModal from "./components/ProjectDetailModal"
 import Skills from "./components/Skills"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("about")
+  const [selectedProject, setSelectedProject] = useState(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,10 +44,17 @@ export default function App() {
       <BentoGrid />
       <About />
       <Experience />
-      <Projects />
+      <Projects onSelectProject={setSelectedProject} />
       <Skills />
       <Contact />
       <Footer />
+
+      {selectedProject && (
+        <ProjectDetailModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </main>
   )
 }
