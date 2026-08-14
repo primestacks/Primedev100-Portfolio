@@ -49,19 +49,17 @@ export default function Hero() {
         <div className="space-y-8 flex-1 text-center max-w-5xl">
           <div className="space-y-6">
             <p className="section-header text-base">{"{PORTFOLIO}"}</p>
-            <p className="font-bold -mb-3 relative">
+            <p className="font-bold mb-2 sm:mb-1 relative">
               <span
-                style={{ letterSpacing: "7px" }}
-                className="gradient-text text-xs sm:text-sm md:text-base lg:text-2xl ml-4 sm:ml-6 md:ml-8"
+                className="gradient-text text-xs sm:text-sm md:text-base lg:text-xl font-mono tracking-widest sm:tracking-[0.35em] uppercase"
               >
                 IT SUPPORT SPECIALIST &
               </span>
             </p>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-balance leading-[0.9] tracking-tighter">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-balance leading-tight sm:leading-[0.95] tracking-tighter">
               <span className="gradient-text">SOFTWARE</span>
               <br />
               <span className="text-foreground">ENGINEER</span>
-              <br />
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-foreground max-w-3xl text-balance mx-auto leading-relaxed">
