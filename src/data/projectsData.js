@@ -2,41 +2,41 @@ export const projectsData = [
   {
     id: "prepv8",
     title: "PrepV8",
-    subtitle: "AI-powered exam preparation & intelligent student assessment platform",
-    category: "Web Apps",
+    subtitle: "AI-powered interview preparation platform for job seekers & professionals across all levels",
+    category: "AI & ML",
     featured: true,
     status: "Under Development",
     image: "/PrepV8.png",
     gallery: [
       "/PrepV8.png"
     ],
-    tech: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
+    tech: ["React", "TypeScript", "Node.js", "OpenAI API", "MongoDB", "Tailwind CSS"],
     stackBreakdown: {
       frontend: ["React 19", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      backend: ["Node.js", "Express.js", "REST APIs"],
-      database: ["MongoDB Atlas", "Redis"],
+      backend: ["Node.js", "Express.js", "LangChain / OpenAI API"],
+      database: ["MongoDB Atlas", "Redis Caching"],
       devops: ["Vercel", "GitHub Actions"]
     },
     shortDescription:
-      "Next-generation exam preparation engine featuring adaptive testing algorithms, timed mock exams, performance telemetry, and detailed subject analytics.",
+      "Intelligent AI mock interview simulator providing real-time voice & text coaching, role-specific technical questions, instant feedback analysis, and personalized career tracks.",
     fullDescription:
-      "PrepV8 is an intelligent educational platform designed to transform how students prepare for competitive examinations. It incorporates adaptive question routing, instant scoring feedback, subject-wise weakness identification, and tailored study schedules.",
+      "PrepV8 is an end-to-end AI-powered interview preparation platform engineered for job seekers, software engineers, product managers, and professionals across all career levels. It features simulated live AI interviewer sessions, domain-specific behavioral and technical question sets, automated answer evaluation, speech clarity scoring, and actionable improvement recommendations.",
     challenge:
-      "Delivering smooth exam session handling without latency during timed tests while generating real-time performance analytics.",
+      "Delivering realistic, non-scripted AI interview conversations with dynamic follow-up questions while generating multi-dimensional feedback scores in real-time.",
     solution:
-      "Built a client-side state machine with offline progress caching and background sync for analytics calculation.",
-    impact: "Significantly improves study efficiency with targeted practice algorithms.",
+      "Implemented a streaming LLM response pipeline paired with speech-to-text integration and real-time STAR rubric evaluation algorithms.",
+    impact: "Empowers candidates across all industries and experience levels to master technical, behavioral, and leadership interviews.",
     features: [
-      { title: "Timed Mock Examinations", desc: "Simulate real exam pressure with customizable timers, auto-submission, and section reviews." },
-      { title: "Performance Telemetry", desc: "Interactive dashboards highlighting accuracy rates, speed per question, and growth trends." },
-      { title: "Adaptive Question Bank", desc: "Dynamically adjust difficulty levels based on individual student performance." },
-      { title: "Instant Answer Explanation", desc: "Step-by-step solutions and reference guides provided immediately after every quiz." }
+      { title: "Simulated AI Mock Interviews", desc: "Practice live realistic technical, system design, and behavioral interviews tailored to target job roles." },
+      { title: "Instant Performance Analytics", desc: "Receive actionable scoring breakdowns on answer structure (STAR method), technical accuracy, confidence, and key takeaways." },
+      { title: "All Experience Levels", desc: "Curated interview question paths covering Entry Level, Mid-Level, Senior, Lead, and Executive positions." },
+      { title: "Targeted Job & Resume Matching", desc: "Paste any target job description or upload your resume to generate custom tailored interview scenarios." }
     ],
     metrics: [
-      { label: "Status", value: "Beta Stage" },
-      { label: "Question Bank", value: "5,000+" },
-      { label: "Analytics Speed", value: "< 100ms" },
-      { label: "Target Score Boost", value: "+35%" }
+      { label: "Target Audience", value: "All Career Levels" },
+      { label: "AI Response Speed", value: "< 300ms" },
+      { label: "Status", value: "Under Development" },
+      { label: "Interview Types", value: "Tech & Behavioral" }
     ],
     liveUrl: null,
     githubUrl: null
