@@ -20,14 +20,14 @@ export default function Projects({ onSelectProject }) {
   return (
     <section
       id="projects"
-      className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden"
+      className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden"
     >
       {/* Background Decorative Glow Orbs */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+      <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
         <p className="section-header">#featured-work</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight">
           Crafted with Precision & Innovation
@@ -38,7 +38,7 @@ export default function Projects({ onSelectProject }) {
       </div>
 
       {/* Category Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
         {categories.map((cat) => {
           const isActive = selectedCategory === cat;
           return (

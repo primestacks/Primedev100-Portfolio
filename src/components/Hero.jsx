@@ -13,7 +13,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="pt-32 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden min-h-screen flex items-center">
+    <section className="pt-24 pb-12 sm:pt-28 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden min-h-[85vh] flex items-center">
       {/* Decorative gradient orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl hidden sm:block"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl hidden md:block"></div>
@@ -78,7 +78,7 @@ export default function Hero() {
               onClick={() =>
                 document
                   .getElementById("projects")
-                  .scrollIntoView({ behavior: "smooth" })
+                  ?.scrollIntoView({ behavior: "smooth" })
               }
               className="px-8 py-4 gradient-bg text-primary-foreground rounded-xl font-semibold text-lg hover:opacity-90 transition-all hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1"
             >
@@ -88,7 +88,7 @@ export default function Hero() {
               onClick={() =>
                 document
                   .getElementById("contact")
-                  .scrollIntoView({ behavior: "smooth" })
+                  ?.scrollIntoView({ behavior: "smooth" })
               }
               className="px-8 py-4 bg-card border-2 border-border text-foreground rounded-xl font-semibold text-lg hover:border-primary/50 transition-all hover:-translate-y-1"
             >

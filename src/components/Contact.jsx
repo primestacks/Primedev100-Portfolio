@@ -49,16 +49,16 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative overflow-hidden"
+      className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative overflow-hidden"
     >
       {/* Decorative gradient orbs */}
       <div className="absolute left-0 bottom-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl hidden sm:block"></div>
       <div className="absolute right-0 top-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl hidden md:block"></div>
 
       <div className="relative z-10">
-        <p className="section-header mb-6 text-center">#contact</p>
+        <p className="section-header mb-4 text-center">#contact</p>
 
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-10 max-w-3xl mx-auto">
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-balance leading-tight mb-6">
             Let's Build <span className="gradient-text">Something Amazing</span>
           </h2>

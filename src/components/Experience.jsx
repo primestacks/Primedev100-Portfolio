@@ -52,12 +52,12 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative overflow-hidden">
+    <section id="experience" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute top-1/3 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
         <p className="section-header">#career-journey</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight">
           Work Experience & Accomplishments

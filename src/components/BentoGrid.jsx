@@ -79,13 +79,13 @@ export default function BentoGrid() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Subtle Background Glows */}
       <div className="absolute top-10 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
         <p className="section-header">#expertise</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight">
           Engineering Capabilities & Core Stack
