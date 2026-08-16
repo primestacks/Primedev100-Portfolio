@@ -1,17 +1,13 @@
-"use client";
-
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
+("use client");
 import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
   FaCopy,
   FaPhone,
-  FaSpinner,
-  FaCheckCircle,
-  FaExclamationCircle
 } from "react-icons/fa";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,47 +15,54 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  const [loading, setLoading] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [copied, setCopied] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setErrorMsg("");
+    setErrorMessage("");
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     if (!serviceId || !templateId || !publicKey) {
-      setLoading(false);
-      setErrorMsg("EmailJS credentials missing in .env file.");
+      setErrorMessage(
+        "EmailJS configuration missing. Please ensure VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY are set in your .env file."
+      );
       return;
     }
 
+    setIsSending(true);
+
     try {
       const templateParams = {
-        from_name: formData.name,
+        name: formData.name,
+        email: formData.email,
+        message: `[PORTFOLIO CONTACT FORM]\nFrom: ${formData.name} (${formData.email})\n\n${formData.message}`,
+        from_name: `${formData.name} (via Primedev100 Portfolio)`,
         from_email: formData.email,
         reply_to: formData.email,
-        message: formData.message,
-        to_name: "Nwachukwu Tony Uju",
+        subject: `[Portfolio Inquiry] New message from ${formData.name}`,
+        source: "Primedev100 Portfolio Website",
+        site_name: "Primedev100 Portfolio",
+        portfolio_source: "Primedev100 Portfolio Website",
       };
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
-      setLoading(false);
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitted(false), 5000);
     } catch (err) {
-      console.error("EmailJS submission error:", err);
-      setLoading(false);
-      setErrorMsg(
-        err?.text || "Failed to send message. Please try again or contact directly via email."
+      console.error("EmailJS Error:", err);
+      setErrorMessage(
+        "Failed to send email. Please try again or reach out directly via email."
       );
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -142,11 +145,6 @@ export default function Contact() {
                       </a>
                     )}
                   </div>
-                  {copied && info.label === "Email" && (
-                    <span className="text-xs text-emerald-500 font-mono mt-1 inline-block">
-                      ✓ Copied to clipboard
-                    </span>
-                  )}
                 </div>
               </div>
             ))}
@@ -180,7 +178,6 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-sm font-bold text-muted-foreground hover:gradient-bg hover:text-primary-foreground hover:border-transparent transition-all duration-300"
-                    aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
                   </a>
@@ -191,20 +188,6 @@ export default function Contact() {
 
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="lg:col-span-3 space-y-5">
-            {submitted && (
-              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm font-medium flex items-center gap-3 animate-in fade-in">
-                <FaCheckCircle className="w-5 h-5 text-emerald-500 shrink-0" />
-                <span>Thank you! Your message has been sent successfully. I will get back to you shortly.</span>
-              </div>
-            )}
-
-            {errorMsg && (
-              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 text-sm font-medium flex items-center gap-3 animate-in fade-in">
-                <FaExclamationCircle className="w-5 h-5 text-red-500 shrink-0" />
-                <span>{errorMsg}</span>
-              </div>
-            )}
-
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-medium mb-2 text-foreground">
@@ -216,8 +199,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  disabled={loading}
-                  className="w-full px-4 py-3.5 rounded-xl bg-card border-2 border-border focus:border-primary focus:outline-none transition-all text-foreground placeholder:text-muted-foreground disabled:opacity-50"
+                  className="w-full px-4 py-3.5 rounded-xl bg-card border-2 border-border focus:border-primary focus:outline-none transition-all text-foreground placeholder:text-muted-foreground"
                   placeholder="Your name"
                 />
               </div>
@@ -231,8 +213,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  disabled={loading}
-                  className="w-full px-4 py-3.5 rounded-xl bg-card border-2 border-border focus:border-primary focus:outline-none transition-all text-foreground placeholder:text-muted-foreground disabled:opacity-50"
+                  className="w-full px-4 py-3.5 rounded-xl bg-card border-2 border-border focus:border-primary focus:outline-none transition-all text-foreground placeholder:text-muted-foreground"
                   placeholder="your@email.com"
                 />
               </div>
@@ -247,31 +228,36 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                disabled={loading}
                 rows="5"
-                className="w-full px-4 py-3.5 rounded-xl bg-card border-2 border-border focus:border-primary focus:outline-none transition-all resize-none text-foreground placeholder:text-muted-foreground disabled:opacity-50"
+                className="w-full px-4 py-3.5 rounded-xl bg-card border-2 border-border focus:border-primary focus:outline-none transition-all resize-none text-foreground placeholder:text-muted-foreground"
                 placeholder="Tell me about your project..."
               />
             </div>
 
+            {errorMessage && (
+              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-500 text-sm font-medium">
+                {errorMessage}
+              </div>
+            )}
+
+            {submitted && (
+              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-sm font-medium flex items-center gap-2">
+                <span>✓</span> Message sent successfully! I will get back to you shortly.
+              </div>
+            )}
+
             <button
               type="submit"
-              disabled={loading || submitted}
-              className="w-full px-8 py-4 gradient-bg text-primary-foreground rounded-xl font-bold text-lg hover:opacity-90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] disabled:opacity-60 flex items-center justify-center gap-3 cursor-pointer"
+              disabled={isSending}
+              className={`w-full px-8 py-4 gradient-bg text-primary-foreground rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] ${
+                isSending ? "opacity-75 cursor-not-allowed" : "hover:opacity-90"
+              }`}
             >
-              {loading ? (
-                <>
-                  <FaSpinner className="w-5 h-5 animate-spin" />
-                  <span>Sending Message...</span>
-                </>
-              ) : submitted ? (
-                <>
-                  <FaCheckCircle className="w-5 h-5" />
-                  <span>Message Sent!</span>
-                </>
-              ) : (
-                "Send Message"
-              )}
+              {isSending
+                ? "Sending Message..."
+                : submitted
+                ? "✓ Message Sent!"
+                : "Send Message"}
             </button>
           </form>
         </div>
