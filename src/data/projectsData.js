@@ -128,41 +128,41 @@ export const projectsData = [
   {
     id: "houseofama",
     title: "House of Ama",
-    subtitle: "Luxury fashion & e-commerce brand platform with custom showcase catalog",
-    category: "Web Apps",
+    subtitle: "Professional caregiving services platform providing compassionate in-home care & support",
+    category: "Full Stack",
     featured: true,
     status: "Live Production",
     image: "/Houseofama.png",
     gallery: [
       "/Houseofama.png"
     ],
-    tech: ["React", "Next.js", "Tailwind CSS", "E-Commerce Suite"],
+    tech: ["React", "Next.js", "Tailwind CSS", "Node.js", "Express"],
     stackBreakdown: {
       frontend: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-      backend: ["Node.js", "REST APIs"],
-      database: ["MongoDB / Commerce DB"],
+      backend: ["Node.js", "Express.js", "REST APIs"],
+      database: ["MongoDB Production"],
       devops: ["Vercel Deployment"]
     },
     shortDescription:
-      "E-commerce storefront and digital brand catalog for House of Ama, showcasing bespoke fashion design collections and luxury products.",
+      "Digital service portal for House of Ama, connecting families with vetted professional caregivers for personalized in-home care, elderly support, and nursing assistance.",
     fullDescription:
-      "House of Ama delivers an elegant digital shopping experience for a premier fashion brand. The site features immersive visual galleries, detailed product sizing guides, direct customer inquiries, and seamless product navigation.",
+      "House of Ama provides a compassionate and reliable digital platform for professional caregiving services. Families can explore tailored care plans, request vetted in-home caregivers, schedule consultations, and manage ongoing elder care and specialized assistance.",
     challenge:
-      "Refining high-definition fashion imagery displays while maintaining ultra-fast page transitions and mobile responsiveness.",
+      "Building a trustworthy digital experience that simplifies matching families with qualified, vetted caregivers while presenting clear service offerings.",
     solution:
-      "Leveraged dynamic image optimization, lazy loading techniques, and glassmorphism UI layouts.",
-    impact: "Elevates brand presence and drives online customer engagements.",
+      "Designed an intuitive, accessible service portal featuring transparent caregiver profiles, structured care plans, and seamless consultation request workflows.",
+    impact: "Empowers families to easily access reliable, high-quality professional caregiving and home care support.",
     features: [
-      { title: "Fashion Collection Showcase", desc: "Interactive lookbooks with high-resolution imagery and hover zoom capabilities." },
-      { title: "Bespoke Ordering Suite", desc: "Direct ordering pathways for custom-tailored apparel and accessories." },
-      { title: "Brand Storytelling", desc: "Rich narrative pages highlighting craftsmanship, materials, and design philosophy." },
-      { title: "Mobile Optimized Storefront", desc: "Smooth swipeable product sliders and touch-friendly interface." }
+      { title: "Caregiver Service Catalog", desc: "Detailed breakdown of in-home care, elderly companion care, and specialized nursing support." },
+      { title: "Care Consultation Booking", desc: "Direct pathway for families to schedule care assessments and request dedicated caregivers." },
+      { title: "Vetted Caregiver Profiles", desc: "Highlighting trained, background-checked caregiver credentials and care philosophy." },
+      { title: "Responsive & Accessible UI", desc: "User-friendly, mobile-optimized design tailored for easy navigation by families and seniors." }
     ],
     metrics: [
       { label: "Live Website", value: "houseofama.net" },
-      { label: "Visual Assets", value: "HD Gallery" },
-      { label: "Mobile Speed", value: "98/100" },
-      { label: "Brand Reach", value: "Global" }
+      { label: "Service Type", value: "Caregiving" },
+      { label: "Care Support", value: "Personalized" },
+      { label: "Platform Speed", value: "< 0.9s" }
     ],
     liveUrl: "https://houseofama.net",
     githubUrl: null

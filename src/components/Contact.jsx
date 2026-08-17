@@ -177,9 +177,10 @@ export default function Contact() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-sm font-bold text-muted-foreground hover:gradient-bg hover:text-primary-foreground hover:border-transparent transition-all duration-300"
+                    className="w-11 h-11 rounded-xl bg-card border border-border/80 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/60 hover:bg-primary/10 hover:scale-110 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group"
+                    aria-label={social.label}
                   >
-                    <social.icon className="w-5 h-5" />
+                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   </a>
                 ))}
               </div>

@@ -6,7 +6,7 @@ export default function Hero() {
     { icon: FaGithub, url: "https://github.com/primestacks", label: "GitHub" },
     {
       icon: FaLinkedin,
-      url: "www.linkedin.com/in/primestack",
+      url: "https://linkedin.com/in/primestack",
       label: "LinkedIn",
     },
     { icon: FaTwitter, url: "https://x.com/primedev100", label: "Twitter" },
@@ -37,10 +37,11 @@ export default function Hero() {
               key={idx}
               href={social.url}
               target="_blank"
-              className="w-12 h-12 flex items-center justify-center rounded-xl gradient-border bg-card hover:gradient-bg hover:text-primary-foreground transition-all duration-300 group"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-2xl bg-card/90 backdrop-blur-md border border-border/80 hover:border-primary/60 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 hover:scale-110 transition-all duration-300 group"
               aria-label={social.label}
             >
-              <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
+              <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
             </a>
           ))}
         </div>
